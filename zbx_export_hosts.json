@@ -1,0 +1,2547 @@
+{
+    "zabbix_export": {
+        "version": "7.0",
+        "host_groups": [
+            {
+                "uuid": "dc579cd7a1a34222933f24f52a68bcd8",
+                "name": "Linux servers"
+            },
+            {
+                "uuid": "07a33e148358473d9bf2d3c5f9c84b07",
+                "name": "SendToEventFederator"
+            },
+            {
+                "uuid": "a9855fc703044966b071a8583b8421c0",
+                "name": "Shinken"
+            },
+            {
+                "uuid": "bc0eaddb51cb494d8f72741fc748aaf5",
+                "name": "zabbixcomboproxies"
+            }
+        ],
+        "hosts": [
+            {
+                "host": "ces1bkp5",
+                "name": "ces1bkp5",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "ICMP Ping by Simple check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.100.100.10",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DE0012MKF7"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$ICMP_LOSS_WARN}",
+                        "value": "20"
+                    },
+                    {
+                        "macro": "{$ICMP_RESPONSE_TIME_WARN}",
+                        "value": "0.15"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "ces1dpaap02",
+                "name": "ces1dpaap02",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "ICMP Ping by Simple check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.100.100.22",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001ZBZ1D"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$ICMP_LOSS_WARN}",
+                        "value": "20"
+                    },
+                    {
+                        "macro": "{$ICMP_RESPONSE_TIME_WARN}",
+                        "value": "0.15"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "ces1dpadb02",
+                "name": "ces1dpadb02",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo3"
+                },
+                "templates": [
+                    {
+                        "name": "ICMP Ping by Simple check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.100.100.23",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001ZC077"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$ICMP_LOSS_WARN}",
+                        "value": "20"
+                    },
+                    {
+                        "macro": "{$ICMP_RESPONSE_TIME_WARN}",
+                        "value": "0.15"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "cesjmp01",
+                "name": "cesjmp01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Windows by NSCLIENT agent - OB"
+                    },
+                    {
+                        "name": "Windows service discovery by NSCLIENT agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.246.68",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DE0014BTFC"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.246.68"
+                    },
+                    {
+                        "macro": "{$_SERVICE}",
+                        "value": "\"Adobe Acrobat Update Service\"$(\"AdobeARMservice\")$,\"Application Host Helper Service\"$(\"AppHostSvc\")$,\"BMC BladeLogic Server Automation RSCD Agent\"$(\"RSCDsvc\")$,\"Base Filtering Engine\"$(\"BFE\")$,\"COM+ Event System\"$(\"EventSystem\")$,\"Certificate Propagation\"$(\"CertPropSvc\")$,\"Cryptographic Services\"$(\"CryptSvc\")$,\"DCOM Server Process Launcher\"$(\"DcomLaunch\")$,\"DHCP Client\"$(\"Dhcp\")$,\"DNS Client\"$(\"Dnscache\")$,\"Desktop Window Manager Session Manager\"$(\"UxSms\")$,\"Diagnostic Policy Service\"$(\"DPS\")$,\"Diagnostics Tracking Service\"$(\"DiagTrack\")$,\"Distributed Link Tracking Client\"$(\"TrkWks\")$,\"Distributed Transaction Coordinator\"$(\"MSDTC\")$,\"Encrypting File System (EFS)\"$(\"EFS\")$,\"Group Policy Client\"$(\"gpsvc\")$,\"IKE and AuthIP IPsec Keying Modules\"$(\"IKEEXT\")$,\"IP Helper\"$(\"iphlpsvc\")$,\"Microsoft FTP Service\"$(\"ftpsvc\")$,\"Microsoft iSCSI Initiator Service\"$(\"MSiSCSI\")$,\"NSClient++_ocb Monitoring Agent\"$(\"nscp_ocb\")$,\"NaviGovernor\"$(\"NaviGovernor\")$,\"NetApp 7-Mode Transition Tool\"$(\"Transition Tool\")$,\"Netlogon\"$(\"Netlogon\")$,\"Network Location Awareness\"$(\"NlaSvc\")$,\"Network Store Interface Service\"$(\"nsi\")$,\"RPC Endpoint Mapper\"$(\"RpcEptMapper\")$,\"Remote Desktop Licensing\"$(\"TermServLicensing\")$,\"Remote Procedure Call (RPC)\"$(\"RpcSs\")$,\"Remote Registry\"$(\"RemoteRegistry\")$,\"SPP Notification Service\"$(\"sppuinotify\")$,\"Security Accounts Manager\"$(\"SamSs\")$,\"Server\"$(\"LanmanServer\")$,\"Shell Hardware Detection\"$(\"ShellHWDetection\")$,\"Software Protection\"$(\"sppsvc\")$,\"SolarWinds TFTP Server\"$(\"SolarWinds TFTP Server\")$,\"Sophos Agent\"$(\"Sophos Agent\")$,\"Sophos Anti-Virus status reporter\"$(\"SAVAdminService\")$,\"Sophos Anti-Virus\"$(\"SAVService\")$,\"Sophos AutoUpdate Service\"$(\"Sophos AutoUpdate Service\")$,\"Sophos Endpoint Defense Service\"$(\"Sophos Endpoint Defense Service\")$,\"Sophos Message Router\"$(\"Sophos Message Router\")$,\"Sophos System Protection Service\"$(\"Sophos System Protection Service\")$,\"Sophos Web Control Service\"$(\"Sophos Web Control Service\")$,\"Sophos Web Intelligence Service\"$(\"swi_service\")$,\"System Event Notifica"
+                    },
+                    {
+                        "macro": "{$_SERVICE2}",
+                        "value": "tion Service\"$(\"SENS\")$,\"TCP/IP NetBIOS Helper\"$(\"lmhosts\")$,\"Task Scheduler\"$(\"Schedule\")$,\"User Profile Service\"$(\"ProfSvc\")$,\"VMware Alias Manager and Ticket Service\"$(\"VGAuthService\")$,\"VMware Physical Disk Helper Service\"$(\"VMware Physical Disk Helper Service\")$,\"VMware Tools\"$(\"VMTools\")$,\"VMware USB Arbitration Service\"$(\"VMUSBArbService\")$,\"Windows Driver Foundation - User-mode Driver Framework\"$(\"wudfsvc\")$,\"Windows Event Log\"$(\"eventlog\")$,\"Windows Firewall\"$(\"MpsSvc\")$,\"Windows Font Cache Service\"$(\"FontCache\")$,\"Windows Management Instrumentation\"$(\"Winmgmt\")$,\"Windows Remote Management (WS-Management)\"$(\"WinRM\")$,\"Windows Update\"$(\"wuauserv\")$,\"Workstation\"$(\"LanmanWorkstation\")$,\"World Wide Web Publishing Service\"$(\"W3SVC\")$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "CESJMP02",
+                "name": "CESJMP02",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo3"
+                },
+                "templates": [
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Windows by NSCLIENT agent - OB"
+                    },
+                    {
+                        "name": "Windows service discovery by NSCLIENT agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.246.69",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DE0016R790"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.246.69"
+                    },
+                    {
+                        "macro": "{$_SERVICE}",
+                        "value": "\"Adobe Acrobat Update Service\"$(\"AdobeARMservice\")$,\"Application Host Helper Service\"$(\"AppHostSvc\")$,\"BMC BladeLogic Server Automation RSCD Agent\"$(\"RSCDsvc\")$,\"Base Filtering Engine\"$(\"BFE\")$,\"COM+ Event System\"$(\"EventSystem\")$,\"Certificate Propagation\"$(\"CertPropSvc\")$,\"Cryptographic Services\"$(\"CryptSvc\")$,\"DCOM Server Process Launcher\"$(\"DcomLaunch\")$,\"DHCP Client\"$(\"Dhcp\")$,\"DNS Client\"$(\"Dnscache\")$,\"Desktop Window Manager Session Manager\"$(\"UxSms\")$,\"Diagnostic Policy Service\"$(\"DPS\")$,\"Diagnostics Tracking Service\"$(\"DiagTrack\")$,\"Distributed Link Tracking Client\"$(\"TrkWks\")$,\"Distributed Transaction Coordinator\"$(\"MSDTC\")$,\"Encrypting File System (EFS)\"$(\"EFS\")$,\"Group Policy Client\"$(\"gpsvc\")$,\"IKE and AuthIP IPsec Keying Modules\"$(\"IKEEXT\")$,\"IP Helper\"$(\"iphlpsvc\")$,\"Microsoft FTP Service\"$(\"ftpsvc\")$,\"Microsoft iSCSI Initiator Service\"$(\"MSiSCSI\")$,\"NSClient++_ocb Monitoring Agent\"$(\"nscp_ocb\")$,\"NaviGovernor\"$(\"NaviGovernor\")$,\"NetApp 7-Mode Transition Tool\"$(\"Transition Tool\")$,\"Netlogon\"$(\"Netlogon\")$,\"Network Location Awareness\"$(\"NlaSvc\")$,\"Network Store Interface Service\"$(\"nsi\")$,\"RPC Endpoint Mapper\"$(\"RpcEptMapper\")$,\"Remote Desktop Licensing\"$(\"TermServLicensing\")$,\"Remote Procedure Call (RPC)\"$(\"RpcSs\")$,\"Remote Registry\"$(\"RemoteRegistry\")$,\"SPP Notification Service\"$(\"sppuinotify\")$,\"Security Accounts Manager\"$(\"SamSs\")$,\"Server\"$(\"LanmanServer\")$,\"Shell Hardware Detection\"$(\"ShellHWDetection\")$,\"Software Protection\"$(\"sppsvc\")$,\"SolarWinds TFTP Server\"$(\"SolarWinds TFTP Server\")$,\"Sophos Agent\"$(\"Sophos Agent\")$,\"Sophos Anti-Virus status reporter\"$(\"SAVAdminService\")$,\"Sophos Anti-Virus\"$(\"SAVService\")$,\"Sophos AutoUpdate Service\"$(\"Sophos AutoUpdate Service\")$,\"Sophos Endpoint Defense Service\"$(\"Sophos Endpoint Defense Service\")$,\"Sophos Message Router\"$(\"Sophos Message Router\")$,\"Sophos System Protection Service\"$(\"Sophos System Protection Service\")$,\"Sophos Web Control Service\"$(\"Sophos Web Control Service\")$,\"Sophos Web Intelligence Service\"$(\"swi_service\")$,\"System Event Notifica"
+                    },
+                    {
+                        "macro": "{$_SERVICE2}",
+                        "value": "tion Service\"$(\"SENS\")$,\"TCP/IP NetBIOS Helper\"$(\"lmhosts\")$,\"Task Scheduler\"$(\"Schedule\")$,\"User Profile Service\"$(\"ProfSvc\")$,\"VMware Alias Manager and Ticket Service\"$(\"VGAuthService\")$,\"VMware Tools\"$(\"VMTools\")$,\"VMware USB Arbitration Service\"$(\"VMUSBArbService\")$,\"Windows Driver Foundation - User-mode Driver Framework\"$(\"wudfsvc\")$,\"Windows Event Log\"$(\"eventlog\")$,\"Windows Firewall\"$(\"MpsSvc\")$,\"Windows Font Cache Service\"$(\"FontCache\")$,\"Windows Management Instrumentation\"$(\"Winmgmt\")$,\"Windows Remote Management (WS-Management)\"$(\"WinRM\")$,\"Windows Update\"$(\"wuauserv\")$,\"Workstation\"$(\"LanmanWorkstation\")$,\"World Wide Web Publishing Service\"$(\"W3SVC\")$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "CESJMP03",
+                "name": "CESJMP03",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Linux by NRPE agent - OB"
+                    },
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.246.70",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DE0017YYFB"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.246.70"
+                    },
+                    {
+                        "macro": "{$_FS_NAME}",
+                        "value": "/$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "CESJMP04",
+                "name": "CESJMP04",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo3"
+                },
+                "templates": [
+                    {
+                        "name": "Linux by NRPE agent - OB"
+                    },
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.246.71",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DE0017YZF8"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.246.71"
+                    },
+                    {
+                        "macro": "{$_FS_NAME}",
+                        "value": "/$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "CESNMCEXTCUST01",
+                "name": "CESNMCEXTCUST01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo3"
+                },
+                "templates": [
+                    {
+                        "name": "Linux no swap by NRPE agent - OB"
+                    },
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.248.141",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001F8U59"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.248.141"
+                    },
+                    {
+                        "macro": "{$_FS_NAME}",
+                        "value": "/$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "CESNMCEXTCUST02",
+                "name": "CESNMCEXTCUST02",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Linux no swap by NRPE agent - OB"
+                    },
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.248.169",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001DND47"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.248.169"
+                    },
+                    {
+                        "macro": "{$_FS_NAME}",
+                        "value": "/$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "CSU-H-MOS-ORANGE SA-OGSBFLEX-PROD-LINUX",
+                "name": "CSU-H-MOS-ORANGE SA-OGSBFLEX-PROD-LINUX",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "URL monitoring by Script - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DO0010W4B7"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$URL.DESCRIPTION}",
+                        "value": "Healthcheck StackManager"
+                    },
+                    {
+                        "macro": "{$URL.ENRICHMENT.TYPE}",
+                        "value": "CSU"
+                    },
+                    {
+                        "macro": "{$URL.EXPECTED.HTTP.CODE}",
+                        "value": "200"
+                    },
+                    {
+                        "macro": "{$URL.INTERVAL}",
+                        "value": "5m"
+                    },
+                    {
+                        "macro": "{$URL.NAME}",
+                        "value": "H-MOS-ORANGE_SA-OGSBFLEX-PROD-LINUX_URL_HEALTH_STKMNGR"
+                    },
+                    {
+                        "macro": "{$URL.OBJECT.CLASS}",
+                        "value": "gram"
+                    },
+                    {
+                        "macro": "{$URL.OPTIONAL.HEADER}",
+                        "value": "User-Agent: Mozilla/4.0"
+                    },
+                    {
+                        "macro": "{$URL.OPTIONAL.MATCH.STRING}",
+                        "value": "eq"
+                    },
+                    {
+                        "macro": "{$URL.OPTIONAL.STRING}",
+                        "value": "Stack Manager"
+                    },
+                    {
+                        "macro": "{$URL.RESPONSE.TIME}",
+                        "value": "10s"
+                    },
+                    {
+                        "macro": "{$URL.TIMEOUT}",
+                        "value": "30s"
+                    },
+                    {
+                        "macro": "{$URL.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/H-MOS-ORANGE_SA-OGSBFLEX-PROD-LINUX_URL_HEALTH_STKMNGR"
+                    },
+                    {
+                        "macro": "{$URL.URGENCY}",
+                        "value": "U1"
+                    },
+                    {
+                        "macro": "{$URL.URL}",
+                        "value": "https://10.228.67.164/login"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "CSU-SMART Automation Lab",
+                "name": "CSU-SMART Automation Lab",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DO0019H580"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$URL_JSON.DESCRIPTION}",
+                        "value": "Test CoreDNS deployment state in K3s,Test Ingress deployment state in K3s,Test Local Path Provisioner deployment state in K3s,Test metrics server deployment state in K3s"
+                    },
+                    {
+                        "macro": "{$URL_JSON.ENRICHMENT.TYPE}",
+                        "value": "CSU,CSU,CSU,CSU"
+                    },
+                    {
+                        "macro": "{$URL_JSON.EXPECTED.HTTP.CODE}",
+                        "value": ",,,"
+                    },
+                    {
+                        "macro": "{$URL_JSON.INTERVAL}",
+                        "value": "2m,2m,2m,2m"
+                    },
+                    {
+                        "macro": "{$URL_JSON.MATCH.CARDINALITY}",
+                        "value": "all,all,all,all"
+                    },
+                    {
+                        "macro": "{$URL_JSON.MATCH.PATH}",
+                        "value": "$.status.readyReplicas,$.status.readyReplicas,$.status.readyReplicas,$.status.readyReplicas"
+                    },
+                    {
+                        "macro": "{$URL_JSON.MATCH.REFERENCE}",
+                        "value": "1,1,1,1"
+                    },
+                    {
+                        "macro": "{$URL_JSON.MATCH.TYPE}",
+                        "value": "number is greater or equal to,number is greater or equal to,number is greater or equal to,number is greater or equal to"
+                    },
+                    {
+                        "macro": "{$URL_JSON.NAME}",
+                        "value": "SMART_AUTOMATION_LAB_URL-JSON_K3S_CORE_DNS_STATUS,SMART_AUTOMATION_LAB_URL-JSON_K3S_INGRESS_STATUS,SMART_AUTOMATION_LAB_URL-JSON_K3S_LOCAL_PATH_PROVISIONER_STATUS,SMART_AUTOMATION_LAB_URL-JSON_K3S_METRICS_SERVER_STATUS"
+                    },
+                    {
+                        "macro": "{$URL_JSON.OBJECT.CLASS}",
+                        "value": "gram,gram,gram,gram"
+                    },
+                    {
+                        "macro": "{$URL_JSON.OPTIONAL.HEADER}",
+                        "value": ",,,"
+                    },
+                    {
+                        "macro": "{$URL_JSON.OPTIONAL.IP}",
+                        "value": ",,,"
+                    },
+                    {
+                        "macro": "{$URL_JSON.OPTIONAL.PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$URL_JSON.OPTIONAL.PROXY}",
+                        "value": ",,,"
+                    },
+                    {
+                        "macro": "{$URL_JSON.OPTIONAL.USER}",
+                        "value": ",,,"
+                    },
+                    {
+                        "macro": "{$URL_JSON.RESPONSE.TIME}",
+                        "value": "10s,10s,10s,10s"
+                    },
+                    {
+                        "macro": "{$URL_JSON.TIMEOUT}",
+                        "value": "30s,30s,30s,30s"
+                    },
+                    {
+                        "macro": "{$URL_JSON.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/SMART_AUTOMATION_LAB_URL-JSON_K3S_CORE_DNS_STATUS,https://espace.agir.orange.com/display/MONITORING/SMART_AUTOMATION_LAB_URL-JSON_K3S_INGRESS_STATUS,https://espace.agir.orange.com/display/MONITORING/SMART_AUTOMATION_LAB_URL-JSON_K3S_LOCAL_PATH_PROVISIONER_STATUS,https://espace.agir.orange.com/display/MONITORING/SMART_AUTOMATION_LAB_URL-JSON_K3S_METRICS_SERVER_STATUS"
+                    },
+                    {
+                        "macro": "{$URL_JSON.URGENCY}",
+                        "value": "U1,U1,U1,U1"
+                    },
+                    {
+                        "macro": "{$URL_JSON.URL}",
+                        "value": "https://172.17.21.196/smartautomation/product/k3s-service-monitor/-/raw/main/coredns.json,https://172.17.21.196/smartautomation/product/k3s-service-monitor/-/raw/main/traefik.json,https://172.17.21.196/smartautomation/product/k3s-service-monitor/-/raw/main/local-path-provisioner.json,https://172.17.21.196/smartautomation/product/k3s-service-monitor/-/raw/main/metrics-server.json"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "f15lsqlsvc",
+                "name": "f15lsqlsvc",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Windows by NSCLIENT agent - OB"
+                    },
+                    {
+                        "name": "Windows service discovery by NSCLIENT agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "172.18.101.190",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DH00587156"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "172.18.101.190"
+                    },
+                    {
+                        "macro": "{$_SERVICE}",
+                        "value": "\"DNS Client\"$(\"Dnscache\")$,\"RPC Endpoint Mapper\"$(\"RpcEptMapper\")$,\"Remote Procedure Call (RPC)\"$(\"RpcSs\")$,\"SQL Server (UMDS)\"$(\"MSSQL\\$UMDS\")$,\"SQL Server (WSUS)\"$(\"MSSQL\\$WSUS\")$,\"SQL Server Agent (UMDS)\"$(\"SQLAgent\\$UMDS\")$,\"SQL Server Agent (WSUS)\"$(\"SQLAgent\\$WSUS\")$,\"SQL Server Browser\"$(\"SQLBrowser\")$,\"SQL Server Integration Services 12.0\"$(\"MsDtsServer120\")$,\"SQL Server VSS Writer\"$(\"SQLWriter\")$,\"Server\"$(\"LanmanServer\")$,\"TCP/IP NetBIOS Helper\"$(\"lmhosts\")$,\"Trend Micro Deep Security Agent\"$(\"ds_agent\")$,\"Trend Micro Deep Security Notifier\"$(\"ds_notifier\")$,\"Trend Micro Solution Platform\"$(\"Amsp\")$,\"Trend Micro\ufffdMoniteur Deep Security\"$(\"ds_monitor\")$,\"VMware Alias Manager and Ticket Service\"$(\"VGAuthService\")$,\"VMware Physical Disk Helper Service\"$(\"VMware Physical Disk Helper Service\")$,\"VMware Tools\"$(\"VMTools\")$,\"Windows Event Log\"$(\"eventlog\")$,\"Workstation\"$(\"LanmanWorkstation\")$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "grosso",
+                "name": "grosso",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "MySQL by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "SQL check numeric monitoring by Database monitor - OB"
+                    },
+                    {
+                        "name": "SQL check text monitoring by Database monitor - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.113",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001LF101"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$CPU.UTIL.CRIT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$MEMORY.UTIL.MAX}",
+                        "value": "98"
+                    },
+                    {
+                        "macro": "{$MYSQL.DSN}",
+                        "value": "tcp://localhost:3306"
+                    },
+                    {
+                        "macro": "{$MYSQL.PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$MYSQL.REPL_LAG.MAX.CRIT}",
+                        "value": "1d"
+                    },
+                    {
+                        "macro": "{$MYSQL.USER}",
+                        "value": "monitoring"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "mysqld"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "mysqld"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "mysqld"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.CRITICAL.VALUE}",
+                        "value": "1000"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.DATABASE.NAME}",
+                        "value": "mit"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.DESCRIPTION}",
+                        "value": "The asset inventory in MIT db is not up to date."
+                    },
+                    {
+                        "macro": "{$SQL.NUM.DRIVER}",
+                        "value": "MariaDB"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.ENRICHMENT.TYPE}",
+                        "value": "CSU"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.INTERVAL}",
+                        "value": "30m"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.NAME}",
+                        "value": "MGB-MIT_SQL_INVENTORY_FRESHNESS"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.OBJECT.CLASS}",
+                        "value": "gram"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.PASSWORD}",
+                        "value": "jpZ1SqVnSzEdM0ly!"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.PATTERN}",
+                        "value": "30000"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.PORT}",
+                        "value": "3306"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.QUERY}",
+                        "value": "\"select  count(*) from v_global where datediff(now(),date_last_presence) < 2\""
+                    },
+                    {
+                        "macro": "{$SQL.NUM.SERVER}",
+                        "value": "10.173.244.113"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.TIMEOUT}",
+                        "value": "30s"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/MGB-MIT_SQL_INVENTORY_FRESHNESS"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.URGENCY}",
+                        "value": "U2"
+                    },
+                    {
+                        "macro": "{$SQL.NUM.USERNAME}",
+                        "value": "monitoring"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.DATABASE.NAME}",
+                        "value": "hermes3"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.DESCRIPTION}",
+                        "value": "read access to mysql database"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.DRIVER}",
+                        "value": "MariaDB"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.ENRICHMENT.TYPE}",
+                        "value": "CSU"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.INTERVAL}",
+                        "value": "3m"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.NAME}",
+                        "value": "MGB_DATABASE_SQL_HERMES_WRITE"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.OBJECT.CLASS}",
+                        "value": "gram"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.OPERAND}",
+                        "value": "eq"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.PASSWORD}",
+                        "value": "ijoSnN$8TxCh"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.PATTERN}",
+                        "value": "ok"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.PORT}",
+                        "value": "3306"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.QUERY}",
+                        "value": "\"select 'ok', sysdate()\""
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.SERVER}",
+                        "value": "10.173.244.113"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.TIMEOUT}",
+                        "value": "30s"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/MGB_DATABASE_SQL_HERMES_WRITE"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.URGENCY}",
+                        "value": "U1"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.USERNAME}",
+                        "value": "hermes3adm"
+                    },
+                    {
+                        "macro": "{$UPTIME.CRIT}",
+                        "value": "10m"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/boot|/home|/images|/opt|/system|/tmp|/usr|/var|/var/lib/mysql/data|/var/lib/mysql/log)$"
+                    },
+                    {
+                        "macro": "{$_CONNECTIONTIME_CRIT}",
+                        "value": "5"
+                    },
+                    {
+                        "macro": "{$_CONNECTION_CRITICAL}",
+                        "value": "99999"
+                    },
+                    {
+                        "macro": "{$_LOGWAITS_CRIT}",
+                        "value": "10"
+                    },
+                    {
+                        "macro": "{$_LONGRUNNINGPROCS_CRIT}",
+                        "value": "20"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "hevea",
+                "name": "hevea",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Linux by NRPE agent - OB"
+                    },
+                    {
+                        "name": "Linux process discovery by NRPE agent - OB"
+                    },
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Script discovery by NRPE or NSCLIENT agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.46",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF002EBL4A"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.244.46"
+                    },
+                    {
+                        "macro": "{$_FS_NAME}",
+                        "value": "/$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
+                    },
+                    {
+                        "macro": "{$_PROCESS}",
+                        "value": "logstash$(org.logstash.Logstash)$$(1:1)$"
+                    },
+                    {
+                        "macro": "{$_SCRIPT}",
+                        "value": "Logstash_JVM_Memory_Consumption$(expect)$$(OK -)$$(/opt/scripts/check_logstash_jvm.sh)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "modo",
+                "name": "modo",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "MySQL by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "SQL check text monitoring by Database monitor - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.114",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001LF202"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$MEMORY.UTIL.MAX}",
+                        "value": "98"
+                    },
+                    {
+                        "macro": "{$MYSQL.DSN}",
+                        "value": "tcp://10.173.244.114:3306"
+                    },
+                    {
+                        "macro": "{$MYSQL.PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$MYSQL.REPL_LAG.MAX.CRIT}",
+                        "value": "120s"
+                    },
+                    {
+                        "macro": "{$MYSQL.USER}",
+                        "value": "monitoring"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "mysqld"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "mysqld"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "mysqld"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.DATABASE.NAME}",
+                        "value": "mit_v2"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.DESCRIPTION}",
+                        "value": "read access to mysql database"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.DRIVER}",
+                        "value": "MariaDB"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.ENRICHMENT.TYPE}",
+                        "value": "CSU"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.INTERVAL}",
+                        "value": "3m"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.NAME}",
+                        "value": "MGB_DATABASE_SQL_MIT_READ"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.OBJECT.CLASS}",
+                        "value": "gram"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.OPERAND}",
+                        "value": "eq"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.PASSWORD}",
+                        "value": "jpZ1SqVnSzEdM0ly!"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.PATTERN}",
+                        "value": "ok"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.PORT}",
+                        "value": "3306"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.QUERY}",
+                        "value": "\"select 'ok', sysdate()\""
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.SERVER}",
+                        "value": "10.173.244.114"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.TIMEOUT}",
+                        "value": "30s"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/MGB_DATABASE_SQL_MIT_READ"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.URGENCY}",
+                        "value": "U1"
+                    },
+                    {
+                        "macro": "{$SQL.TEXT.USERNAME}",
+                        "value": "monitoring"
+                    },
+                    {
+                        "macro": "{$UPTIME.CRIT}",
+                        "value": "10m"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/boot|/home|/images|/opt|/system|/tmp|/usr|/var|/var/lib/mysql/data|/var/lib/mysql/log)$"
+                    },
+                    {
+                        "macro": "{$_CONNECTIONTIME_CRIT}",
+                        "value": "5"
+                    },
+                    {
+                        "macro": "{$_CONNECTION_CRITICAL}",
+                        "value": "99999"
+                    },
+                    {
+                        "macro": "{$_LOGWAITS_CRIT}",
+                        "value": "10"
+                    },
+                    {
+                        "macro": "{$_LONGRUNNINGPROCS_CRIT}",
+                        "value": "20"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "MX7BVAOMINFRA07",
+                "name": "MX7BVAOMINFRA07",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "MX7000 Dell chassis by Script - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF0035TC65"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.19.36.83"
+                    },
+                    {
+                        "macro": "{$_OMEM_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_OMEM_USERNAME}",
+                        "value": "DCO"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "PAKACIMBSDWAN01",
+                "name": "PAKACIMBSDWAN01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo3"
+                },
+                "templates": [
+                    {
+                        "name": "VMware Datastores Spec by External check - OB"
+                    },
+                    {
+                        "name": "VMWare ESX by External check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003Q8E38"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.12.168.11"
+                    },
+                    {
+                        "macro": "{$_DATASTORE}",
+                        "value": "Local_DataStore_OS (1)$(95)$,Local_DataStore_VM's (1)$(95)$"
+                    },
+                    {
+                        "macro": "{$_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_USERNAME}",
+                        "value": "Shinken_CIMB"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "PAKACIMBSDWAN02",
+                "name": "PAKACIMBSDWAN02",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "VMware Datastores Spec by External check - OB"
+                    },
+                    {
+                        "name": "VMWare ESX by External check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003Q8F3B"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.12.168.12"
+                    },
+                    {
+                        "macro": "{$_DATASTORE}",
+                        "value": "Local_DataStore_OS$(95)$,Local_DataStore_VM's$(95)$"
+                    },
+                    {
+                        "macro": "{$_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_USERNAME}",
+                        "value": "Shinken_CIMB"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "pmsesxrns08",
+                "name": "pmsesxrns08",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "VMware Datastores Spec by External check - OB"
+                    },
+                    {
+                        "name": "VMWare ESX by External check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001N7L73"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.244.10"
+                    },
+                    {
+                        "macro": "{$_DATASTORE}",
+                        "value": "DS_SAN_INFRA_SHELF"
+                    },
+                    {
+                        "macro": "{$_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_USERNAME}",
+                        "value": "root"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "pmsesxrns09",
+                "name": "pmsesxrns09",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "VMware Datastores Spec by External check - OB"
+                    },
+                    {
+                        "name": "VMWare ESX by External check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001N7M72"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.244.11"
+                    },
+                    {
+                        "macro": "{$_DATASTORE}",
+                        "value": "DS_SAN_INFRA_SHELF,DS_11_VMWARE"
+                    },
+                    {
+                        "macro": "{$_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_USERNAME}",
+                        "value": "root"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "pmsvcenter01",
+                "name": "pmsvcenter01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "VMware Vcenter Core by Script - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003PGD3C"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.173.244.43"
+                    },
+                    {
+                        "macro": "{$_VCENTER_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_VCENTER_USERNAME}",
+                        "value": "administrator@vsphere.local"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "PSTRCIMBSDWAN01",
+                "name": "PSTRCIMBSDWAN01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "VMware Datastores Spec by External check - OB"
+                    },
+                    {
+                        "name": "VMWare ESX by External check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003Q8D39"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.12.168.141"
+                    },
+                    {
+                        "macro": "{$_DATASTORE}",
+                        "value": "Local_DataStore_OS$(95)$,Local_DataStore_VM's$(95)$"
+                    },
+                    {
+                        "macro": "{$_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_USERNAME}",
+                        "value": "Shinken_CIMB"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkencombointernet1",
+                "name": "shinkencombointernet1",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Remote Zabbix proxy health by Zabbix internal - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "Linux servers"
+                    },
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "zabbixcomboproxies"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.185",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001SWP21"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$KERNEL.MAXZOMBPROC.MIN}",
+                        "value": "100"
+                    },
+                    {
+                        "macro": "{$ZABBIX.PROXY.ADDRESS}",
+                        "value": "10.173.244.185"
+                    },
+                    {
+                        "macro": "{$ZABBIX.PROXY.PORT}",
+                        "value": "10051",
+                        "description": "Port of proxy to be remotely queried (default is 10051)."
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkencombointernet2",
+                "name": "shinkencombointernet2",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Remote Zabbix proxy health by Zabbix internal - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "Linux servers"
+                    },
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "zabbixcomboproxies"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.186",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF001SWQ20"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$KERNEL.MAXZOMBPROC.MIN}",
+                        "value": "100"
+                    },
+                    {
+                        "macro": "{$ZABBIX.PROXY.ADDRESS}",
+                        "value": "10.173.244.186"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkenmaster1",
+                "name": "shinkenmaster1",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "File monitoring by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.36",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF002EB630"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$FIL.DESCRIPTION}",
+                        "value": "Error found in GRAM shinken configuration,Error found in MIT shinken configuration"
+                    },
+                    {
+                        "macro": "{$FIL.ENRICHMENT.TYPE}",
+                        "value": "CSU,CSU"
+                    },
+                    {
+                        "macro": "{$FIL.FIL}",
+                        "value": "/etc/shinken/gram_test/error.realms,/etc/shinken/mit_test/error.realms"
+                    },
+                    {
+                        "macro": "{$FIL.INTERVAL}",
+                        "value": "30m,30m"
+                    },
+                    {
+                        "macro": "{$FIL.NAME}",
+                        "value": "OCB-MONITORING_FIL_MASTER1_GRAM_ERROR,OCB-MONITORING_FIL_MASTER1_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.OBJECT.CLASS}",
+                        "value": "gram,gram"
+                    },
+                    {
+                        "macro": "{$FIL.OPTIONAL.FILTER}",
+                        "value": ".*,.*"
+                    },
+                    {
+                        "macro": "{$FIL.THRESHOLD}",
+                        "value": "0:0,0:0"
+                    },
+                    {
+                        "macro": "{$FIL.TIMEOUT}",
+                        "value": "30s,30s"
+                    },
+                    {
+                        "macro": "{$FIL.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER1_GRAM_ERROR,https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER1_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.URGENCY}",
+                        "value": "U2,U2"
+                    },
+                    {
+                        "macro": "{$MEMORY.UTIL.MAX}",
+                        "value": "75"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "shinken-reactionner,shinken-arbiter,nrpe-ocb,shinken-broker,mcxa"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default,default,default,default,default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m,5m,5m,5m,5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:,1:,1:,1:4,1:"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "shinken-reactionner,shinken-arbiter,nrpe-ocb,shinken-broker,mcxa"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os,os,os,os,os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process,process,process,process,process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "shinken-reactionner,shinken-arbiter,nrpe-ocb,shinken-broker,perl"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3,U3,U3,U3,U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/dev/shm|/boot|/home|/images|/opt|/system|/tmp|/usr|/var|/etc/shinken)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkenmaster2",
+                "name": "shinkenmaster2",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "File monitoring by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.19",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF002EB731"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$FIL.DESCRIPTION}",
+                        "value": "Error found in GRAM shinken configuration,Error found in MIT shinken configuration"
+                    },
+                    {
+                        "macro": "{$FIL.ENRICHMENT.TYPE}",
+                        "value": "CSU,CSU"
+                    },
+                    {
+                        "macro": "{$FIL.FIL}",
+                        "value": "/etc/shinken/gram_test/error.realms,/etc/shinken/mit_test/error.realms"
+                    },
+                    {
+                        "macro": "{$FIL.INTERVAL}",
+                        "value": "30m,30m"
+                    },
+                    {
+                        "macro": "{$FIL.NAME}",
+                        "value": "OCB-MONITORING_FIL_MASTER2_GRAM_ERROR,OCB-MONITORING_FIL_MASTER2_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.OBJECT.CLASS}",
+                        "value": "gram,gram"
+                    },
+                    {
+                        "macro": "{$FIL.OPTIONAL.FILTER}",
+                        "value": ".*,.*"
+                    },
+                    {
+                        "macro": "{$FIL.THRESHOLD}",
+                        "value": "0:0,0:0"
+                    },
+                    {
+                        "macro": "{$FIL.TIMEOUT}",
+                        "value": "30s,30s"
+                    },
+                    {
+                        "macro": "{$FIL.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER2_GRAM_ERROR,https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER2_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.URGENCY}",
+                        "value": "U2,U2"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "nrpe-ocb,shinken-reactionner,shinken-broker,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default,default,default,default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m,5m,5m,5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:,1:,1:4,1:"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "nrpe-ocb,shinken-reactionner,shinken-broker,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os,os,os,os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process,process,process,process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "nrpe-ocb,shinken-reactionner,shinken-broker,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3,U3,U3,U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/dev/shm|/boot|/home|/images|/opt|/system|/tmp|/usr|/var|/etc/shinken)$"
+                    },
+                    {
+                        "macro": "{$VFS.FS.INODE.PFREE.MIN.CRIT:/tmp}",
+                        "value": "11",
+                        "description": "Context-specific value for /tmp"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkenmaster3",
+                "name": "shinkenmaster3",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "File monitoring by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.27",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF002EB83E"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$FIL.DESCRIPTION}",
+                        "value": "Error found in GRAM shinken configuration,Error found in MIT shinken configuration"
+                    },
+                    {
+                        "macro": "{$FIL.ENRICHMENT.TYPE}",
+                        "value": "CSU,CSU"
+                    },
+                    {
+                        "macro": "{$FIL.FIL}",
+                        "value": "/etc/shinken/gram_test/error.realms,/etc/shinken/mit_test/error.realms"
+                    },
+                    {
+                        "macro": "{$FIL.INTERVAL}",
+                        "value": "30m,30m"
+                    },
+                    {
+                        "macro": "{$FIL.NAME}",
+                        "value": "OCB-MONITORING_FIL_MASTER3_GRAM_ERROR,OCB-MONITORING_FIL_MASTER3_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.OBJECT.CLASS}",
+                        "value": "gram,gram"
+                    },
+                    {
+                        "macro": "{$FIL.OPTIONAL.FILTER}",
+                        "value": ".*,.*"
+                    },
+                    {
+                        "macro": "{$FIL.THRESHOLD}",
+                        "value": "0:0,0:0"
+                    },
+                    {
+                        "macro": "{$FIL.TIMEOUT}",
+                        "value": "30s,30s"
+                    },
+                    {
+                        "macro": "{$FIL.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER3_GRAM_ERROR,https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER3_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.URGENCY}",
+                        "value": "U2,U2"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-arbiter,shinken-reactionner"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default,default,default,default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m,5m,5m,5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:,1:4,1:,1:"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-arbiter,shinken-reactionner"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os,os,os,os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process,process,process,process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-arbiter,shinken-reactionner"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3,U3,U3,U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/dev/shm|/boot|/home|/images|/opt|/system|/tmp|/usr|/var|/etc/shinken)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkenmaster6",
+                "name": "shinkenmaster6",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "File monitoring by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.30",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF002EBB44"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$FIL.DESCRIPTION}",
+                        "value": "Error found in GRAM shinken configuration,Error found in MIT shinken configuration"
+                    },
+                    {
+                        "macro": "{$FIL.ENRICHMENT.TYPE}",
+                        "value": "CSU,CSU"
+                    },
+                    {
+                        "macro": "{$FIL.FIL}",
+                        "value": "/etc/shinken/gram_test/error.realms,/etc/shinken/mit_test/error.realms"
+                    },
+                    {
+                        "macro": "{$FIL.INTERVAL}",
+                        "value": "30m,30m"
+                    },
+                    {
+                        "macro": "{$FIL.NAME}",
+                        "value": "OCB-MONITORING_FIL_MASTER6_GRAM_ERROR,OCB-MONITORING_FIL_MASTER6_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.OBJECT.CLASS}",
+                        "value": "gram,gram"
+                    },
+                    {
+                        "macro": "{$FIL.OPTIONAL.FILTER}",
+                        "value": ".*,.*"
+                    },
+                    {
+                        "macro": "{$FIL.THRESHOLD}",
+                        "value": "0:0,0:0"
+                    },
+                    {
+                        "macro": "{$FIL.TIMEOUT}",
+                        "value": "30s,30s"
+                    },
+                    {
+                        "macro": "{$FIL.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER6_GRAM_ERROR,https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER6_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.URGENCY}",
+                        "value": "U2,U2"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-reactionner,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default,default,default,default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m,5m,5m,5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:,1:4,1:,1:"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-reactionner,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os,os,os,os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process,process,process,process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-reactionner,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3,U3,U3,U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/dev/shm|/boot|/home|/images|/opt|/system|/tmp|/usr|/var|/etc/shinken)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkenmaster7",
+                "name": "shinkenmaster7",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "File monitoring by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.17",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF002EBC45"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$FIL.DESCRIPTION}",
+                        "value": "Error found in GRAM shinken configuration,Error found in MIT shinken configuration"
+                    },
+                    {
+                        "macro": "{$FIL.ENRICHMENT.TYPE}",
+                        "value": "CSU,CSU"
+                    },
+                    {
+                        "macro": "{$FIL.FIL}",
+                        "value": "/etc/shinken/gram_test/error.realms,/etc/shinken/mit_test/error.realms"
+                    },
+                    {
+                        "macro": "{$FIL.INTERVAL}",
+                        "value": "30m,30m"
+                    },
+                    {
+                        "macro": "{$FIL.NAME}",
+                        "value": "OCB-MONITORING_FIL_MASTER7_GRAM_ERROR,OCB-MONITORING_FIL_MASTER7_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.OBJECT.CLASS}",
+                        "value": "gram,gram"
+                    },
+                    {
+                        "macro": "{$FIL.OPTIONAL.FILTER}",
+                        "value": ".*,.*"
+                    },
+                    {
+                        "macro": "{$FIL.THRESHOLD}",
+                        "value": "0:0,0:0"
+                    },
+                    {
+                        "macro": "{$FIL.TIMEOUT}",
+                        "value": "30s,30s"
+                    },
+                    {
+                        "macro": "{$FIL.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER7_GRAM_ERROR,https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER7_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.URGENCY}",
+                        "value": "U2,U2"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "shinken-broker,shinken-reactionner,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default,default,default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m,5m,5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:4,1:,1:"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "shinken-broker,shinken-reactionner,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os,os,os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process,process,process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "shinken-broker,shinken-reactionner,shinken-arbiter"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3,U3,U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/dev/shm|/boot|/home|/images|/opt|/system|/tmp|/usr|/var)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "shinkenmaster8",
+                "name": "shinkenmaster8",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo1"
+                },
+                "templates": [
+                    {
+                        "name": "File monitoring by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Linux by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "OS processes by Zabbix agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.173.244.32",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF002EBD42"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$FIL.DESCRIPTION}",
+                        "value": "Error found in GRAM shinken configuration,Error found in MIT shinken configuration"
+                    },
+                    {
+                        "macro": "{$FIL.ENRICHMENT.TYPE}",
+                        "value": "CSU,CSU"
+                    },
+                    {
+                        "macro": "{$FIL.FIL}",
+                        "value": "/etc/shinken/gram_test/error.realms,/etc/shinken/mit_test/error.realms"
+                    },
+                    {
+                        "macro": "{$FIL.INTERVAL}",
+                        "value": "30m,30m"
+                    },
+                    {
+                        "macro": "{$FIL.NAME}",
+                        "value": "OCB-MONITORING_FIL_MASTER8_GRAM_ERROR,OCB-MONITORING_FIL_MASTER8_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.OBJECT.CLASS}",
+                        "value": "gram,gram"
+                    },
+                    {
+                        "macro": "{$FIL.OPTIONAL.FILTER}",
+                        "value": ".*,.*"
+                    },
+                    {
+                        "macro": "{$FIL.THRESHOLD}",
+                        "value": "0:0,0:0"
+                    },
+                    {
+                        "macro": "{$FIL.TIMEOUT}",
+                        "value": "30s,30s"
+                    },
+                    {
+                        "macro": "{$FIL.TIN}",
+                        "value": "https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER8_GRAM_ERROR,https://espace.agir.orange.com/display/MONITORING/OCB-MONITORING_FIL_MASTER8_MIT_ERROR"
+                    },
+                    {
+                        "macro": "{$FIL.URGENCY}",
+                        "value": "U2,U2"
+                    },
+                    {
+                        "macro": "{$PROC.DESCRIPTION}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-arbiter,shinken-reactionner,ntpd"
+                    },
+                    {
+                        "macro": "{$PROC.ENRICHMENT.TYPE}",
+                        "value": "default,default,default,default,default"
+                    },
+                    {
+                        "macro": "{$PROC.INTERVAL}",
+                        "value": "5m,5m,5m,5m,5m"
+                    },
+                    {
+                        "macro": "{$PROC.MIN.MAX}",
+                        "value": "1:,1:4,1:,1:,1:1"
+                    },
+                    {
+                        "macro": "{$PROC.NAME}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-arbiter,shinken-reactionner,ntpd"
+                    },
+                    {
+                        "macro": "{$PROC.OBJECT.CLASS}",
+                        "value": "os,os,os,os,os"
+                    },
+                    {
+                        "macro": "{$PROC.PARAMETER}",
+                        "value": "process,process,process,process,process"
+                    },
+                    {
+                        "macro": "{$PROC.PROC}",
+                        "value": "nrpe-ocb,shinken-broker,shinken-arbiter,shinken-reactionner,/usr/sbin/ntpd"
+                    },
+                    {
+                        "macro": "{$PROC.TIN}",
+                        "value": "https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d,https://espace.agir.orange.com/x/Tzb3d"
+                    },
+                    {
+                        "macro": "{$PROC.URGENCY}",
+                        "value": "U3,U3,U3,U3,U3"
+                    },
+                    {
+                        "macro": "{$REBOOT.MONITOR}",
+                        "value": "Enable"
+                    },
+                    {
+                        "macro": "{$VFS.FS.FSNAME.MATCHES}",
+                        "value": "^(/|/dev/shm|/boot|/home|/images|/opt|/system|/tmp|/usr|/var|/etc/shinken)$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "VBANCIMBAD01",
+                "name": "VBANCIMBAD01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
+                    },
+                    {
+                        "name": "Windows by NSCLIENT agent - OB"
+                    },
+                    {
+                        "name": "Windows service discovery by NSCLIENT agent - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    },
+                    {
+                        "name": "Shinken"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.12.168.9",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003Q8K36"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.12.168.9"
+                    },
+                    {
+                        "macro": "{$_SERVICE}",
+                        "value": "\"DNS Client\"$(\"Dnscache\")$,\"RPC Endpoint Mapper\"$(\"RpcEptMapper\")$,\"Remote Procedure Call (RPC)\"$(\"RpcSs\")$,\"Server\"$(\"LanmanServer\")$,\"TCP/IP NetBIOS Helper\"$(\"lmhosts\")$,\"Windows Event Log\"$(\"eventlog\")$,\"Workstation\"$(\"LanmanWorkstation\")$"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "VBANCIMBVC01",
+                "name": "VBANCIMBVC01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo2"
+                },
+                "templates": [
+                    {
+                        "name": "Vcenter appliance by Script - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003Q8J37"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.12.168.10"
+                    },
+                    {
+                        "macro": "{$_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_USERNAME}",
+                        "value": "svc_vCSA@cimbinfra.local"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "VSTRCIMBVC01",
+                "name": "VSTRCIMBVC01",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo3"
+                },
+                "templates": [
+                    {
+                        "name": "Vcenter appliance by Script - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003Q8L31"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$HOSTADDRESS}",
+                        "value": "10.12.168.140"
+                    },
+                    {
+                        "macro": "{$_PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$_USERNAME}",
+                        "value": "CIMBInfraDR\\svc_vCSA"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            }
+        ]
+    }
+}
