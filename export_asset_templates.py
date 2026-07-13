@@ -4,15 +4,34 @@ import getpass
 import requests
 import urllib3
 import os
+from pathlib import Path
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 ZABBIX_URL = "https://zabbix-bypassproxy.casa.uro.equant.com/api_jsonrpc.php"
 
+BASE_DIR = Path(__file__).resolve().parent
+
+
+def resolve_path(env_var, default_name):
+    if env_var:
+        return env_var
+
+    candidate = BASE_DIR / default_name
+    if candidate.exists():
+        return str(candidate)
+
+    legacy = Path(r"C:\Users\BXXT8019\OneDrive - orange.com\Bureau") / default_name
+    if legacy.exists():
+        return str(legacy)
+
+    return str(candidate)
+
+
 # Files
-INPUT_FILE = r"C:\Users\BXXT8019\OneDrive - orange.com\Bureau\assets.txt"
-OUTPUT_FILE = r"C:\Users\BXXT8019\OneDrive - orange.com\Bureau\asset_templates.csv"
-ASSETS_CMDB_FILE = r"C:\Users\BXXT8019\Downloads\MIP-Assets.csv"
+INPUT_FILE = resolve_path(os.getenv("ASSETS_INPUT_FILE"), "assets.txt")
+OUTPUT_FILE = resolve_path(os.getenv("ASSET_TEMPLATES_OUTPUT"), "asset_templates.csv")
+ASSETS_CMDB_FILE = resolve_path(os.getenv("ASSETS_CMDB_FILE"), "MIP-Assets.csv")
 
 # Request behavior
 VERIFY_SSL = False   # set True + corporate CA if needed

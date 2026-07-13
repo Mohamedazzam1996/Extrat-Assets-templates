@@ -21,47 +21,6 @@
         ],
         "hosts": [
             {
-                "host": "ces1bkp5",
-                "name": "ces1bkp5",
-                "monitored_by": "PROXY",
-                "proxy": {
-                    "name": "shinkencombo1"
-                },
-                "templates": [
-                    {
-                        "name": "ICMP Ping by Simple check - OB"
-                    }
-                ],
-                "groups": [
-                    {
-                        "name": "SendToEventFederator"
-                    }
-                ],
-                "interfaces": [
-                    {
-                        "ip": "10.100.100.10",
-                        "interface_ref": "if1"
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "cmdb_id",
-                        "value": "DE0012MKF7"
-                    }
-                ],
-                "macros": [
-                    {
-                        "macro": "{$ICMP_LOSS_WARN}",
-                        "value": "20"
-                    },
-                    {
-                        "macro": "{$ICMP_RESPONSE_TIME_WARN}",
-                        "value": "0.15"
-                    }
-                ],
-                "inventory_mode": "DISABLED"
-            },
-            {
                 "host": "ces1dpaap02",
                 "name": "ces1dpaap02",
                 "monitored_by": "PROXY",
@@ -139,302 +98,6 @@
                     {
                         "macro": "{$ICMP_RESPONSE_TIME_WARN}",
                         "value": "0.15"
-                    }
-                ],
-                "inventory_mode": "DISABLED"
-            },
-            {
-                "host": "cesjmp01",
-                "name": "cesjmp01",
-                "monitored_by": "PROXY",
-                "proxy": {
-                    "name": "shinkencombo2"
-                },
-                "templates": [
-                    {
-                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
-                    },
-                    {
-                        "name": "Windows by NSCLIENT agent - OB"
-                    },
-                    {
-                        "name": "Windows service discovery by NSCLIENT agent - OB"
-                    }
-                ],
-                "groups": [
-                    {
-                        "name": "SendToEventFederator"
-                    },
-                    {
-                        "name": "Shinken"
-                    }
-                ],
-                "interfaces": [
-                    {
-                        "ip": "10.173.246.68",
-                        "interface_ref": "if1"
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "cmdb_id",
-                        "value": "DE0014BTFC"
-                    }
-                ],
-                "macros": [
-                    {
-                        "macro": "{$HOSTADDRESS}",
-                        "value": "10.173.246.68"
-                    },
-                    {
-                        "macro": "{$_SERVICE}",
-                        "value": "\"Adobe Acrobat Update Service\"$(\"AdobeARMservice\")$,\"Application Host Helper Service\"$(\"AppHostSvc\")$,\"BMC BladeLogic Server Automation RSCD Agent\"$(\"RSCDsvc\")$,\"Base Filtering Engine\"$(\"BFE\")$,\"COM+ Event System\"$(\"EventSystem\")$,\"Certificate Propagation\"$(\"CertPropSvc\")$,\"Cryptographic Services\"$(\"CryptSvc\")$,\"DCOM Server Process Launcher\"$(\"DcomLaunch\")$,\"DHCP Client\"$(\"Dhcp\")$,\"DNS Client\"$(\"Dnscache\")$,\"Desktop Window Manager Session Manager\"$(\"UxSms\")$,\"Diagnostic Policy Service\"$(\"DPS\")$,\"Diagnostics Tracking Service\"$(\"DiagTrack\")$,\"Distributed Link Tracking Client\"$(\"TrkWks\")$,\"Distributed Transaction Coordinator\"$(\"MSDTC\")$,\"Encrypting File System (EFS)\"$(\"EFS\")$,\"Group Policy Client\"$(\"gpsvc\")$,\"IKE and AuthIP IPsec Keying Modules\"$(\"IKEEXT\")$,\"IP Helper\"$(\"iphlpsvc\")$,\"Microsoft FTP Service\"$(\"ftpsvc\")$,\"Microsoft iSCSI Initiator Service\"$(\"MSiSCSI\")$,\"NSClient++_ocb Monitoring Agent\"$(\"nscp_ocb\")$,\"NaviGovernor\"$(\"NaviGovernor\")$,\"NetApp 7-Mode Transition Tool\"$(\"Transition Tool\")$,\"Netlogon\"$(\"Netlogon\")$,\"Network Location Awareness\"$(\"NlaSvc\")$,\"Network Store Interface Service\"$(\"nsi\")$,\"RPC Endpoint Mapper\"$(\"RpcEptMapper\")$,\"Remote Desktop Licensing\"$(\"TermServLicensing\")$,\"Remote Procedure Call (RPC)\"$(\"RpcSs\")$,\"Remote Registry\"$(\"RemoteRegistry\")$,\"SPP Notification Service\"$(\"sppuinotify\")$,\"Security Accounts Manager\"$(\"SamSs\")$,\"Server\"$(\"LanmanServer\")$,\"Shell Hardware Detection\"$(\"ShellHWDetection\")$,\"Software Protection\"$(\"sppsvc\")$,\"SolarWinds TFTP Server\"$(\"SolarWinds TFTP Server\")$,\"Sophos Agent\"$(\"Sophos Agent\")$,\"Sophos Anti-Virus status reporter\"$(\"SAVAdminService\")$,\"Sophos Anti-Virus\"$(\"SAVService\")$,\"Sophos AutoUpdate Service\"$(\"Sophos AutoUpdate Service\")$,\"Sophos Endpoint Defense Service\"$(\"Sophos Endpoint Defense Service\")$,\"Sophos Message Router\"$(\"Sophos Message Router\")$,\"Sophos System Protection Service\"$(\"Sophos System Protection Service\")$,\"Sophos Web Control Service\"$(\"Sophos Web Control Service\")$,\"Sophos Web Intelligence Service\"$(\"swi_service\")$,\"System Event Notifica"
-                    },
-                    {
-                        "macro": "{$_SERVICE2}",
-                        "value": "tion Service\"$(\"SENS\")$,\"TCP/IP NetBIOS Helper\"$(\"lmhosts\")$,\"Task Scheduler\"$(\"Schedule\")$,\"User Profile Service\"$(\"ProfSvc\")$,\"VMware Alias Manager and Ticket Service\"$(\"VGAuthService\")$,\"VMware Physical Disk Helper Service\"$(\"VMware Physical Disk Helper Service\")$,\"VMware Tools\"$(\"VMTools\")$,\"VMware USB Arbitration Service\"$(\"VMUSBArbService\")$,\"Windows Driver Foundation - User-mode Driver Framework\"$(\"wudfsvc\")$,\"Windows Event Log\"$(\"eventlog\")$,\"Windows Firewall\"$(\"MpsSvc\")$,\"Windows Font Cache Service\"$(\"FontCache\")$,\"Windows Management Instrumentation\"$(\"Winmgmt\")$,\"Windows Remote Management (WS-Management)\"$(\"WinRM\")$,\"Windows Update\"$(\"wuauserv\")$,\"Workstation\"$(\"LanmanWorkstation\")$,\"World Wide Web Publishing Service\"$(\"W3SVC\")$"
-                    }
-                ],
-                "inventory_mode": "DISABLED"
-            },
-            {
-                "host": "CESJMP02",
-                "name": "CESJMP02",
-                "monitored_by": "PROXY",
-                "proxy": {
-                    "name": "shinkencombo3"
-                },
-                "templates": [
-                    {
-                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
-                    },
-                    {
-                        "name": "Windows by NSCLIENT agent - OB"
-                    },
-                    {
-                        "name": "Windows service discovery by NSCLIENT agent - OB"
-                    }
-                ],
-                "groups": [
-                    {
-                        "name": "SendToEventFederator"
-                    },
-                    {
-                        "name": "Shinken"
-                    }
-                ],
-                "interfaces": [
-                    {
-                        "ip": "10.173.246.69",
-                        "interface_ref": "if1"
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "cmdb_id",
-                        "value": "DE0016R790"
-                    }
-                ],
-                "macros": [
-                    {
-                        "macro": "{$HOSTADDRESS}",
-                        "value": "10.173.246.69"
-                    },
-                    {
-                        "macro": "{$_SERVICE}",
-                        "value": "\"Adobe Acrobat Update Service\"$(\"AdobeARMservice\")$,\"Application Host Helper Service\"$(\"AppHostSvc\")$,\"BMC BladeLogic Server Automation RSCD Agent\"$(\"RSCDsvc\")$,\"Base Filtering Engine\"$(\"BFE\")$,\"COM+ Event System\"$(\"EventSystem\")$,\"Certificate Propagation\"$(\"CertPropSvc\")$,\"Cryptographic Services\"$(\"CryptSvc\")$,\"DCOM Server Process Launcher\"$(\"DcomLaunch\")$,\"DHCP Client\"$(\"Dhcp\")$,\"DNS Client\"$(\"Dnscache\")$,\"Desktop Window Manager Session Manager\"$(\"UxSms\")$,\"Diagnostic Policy Service\"$(\"DPS\")$,\"Diagnostics Tracking Service\"$(\"DiagTrack\")$,\"Distributed Link Tracking Client\"$(\"TrkWks\")$,\"Distributed Transaction Coordinator\"$(\"MSDTC\")$,\"Encrypting File System (EFS)\"$(\"EFS\")$,\"Group Policy Client\"$(\"gpsvc\")$,\"IKE and AuthIP IPsec Keying Modules\"$(\"IKEEXT\")$,\"IP Helper\"$(\"iphlpsvc\")$,\"Microsoft FTP Service\"$(\"ftpsvc\")$,\"Microsoft iSCSI Initiator Service\"$(\"MSiSCSI\")$,\"NSClient++_ocb Monitoring Agent\"$(\"nscp_ocb\")$,\"NaviGovernor\"$(\"NaviGovernor\")$,\"NetApp 7-Mode Transition Tool\"$(\"Transition Tool\")$,\"Netlogon\"$(\"Netlogon\")$,\"Network Location Awareness\"$(\"NlaSvc\")$,\"Network Store Interface Service\"$(\"nsi\")$,\"RPC Endpoint Mapper\"$(\"RpcEptMapper\")$,\"Remote Desktop Licensing\"$(\"TermServLicensing\")$,\"Remote Procedure Call (RPC)\"$(\"RpcSs\")$,\"Remote Registry\"$(\"RemoteRegistry\")$,\"SPP Notification Service\"$(\"sppuinotify\")$,\"Security Accounts Manager\"$(\"SamSs\")$,\"Server\"$(\"LanmanServer\")$,\"Shell Hardware Detection\"$(\"ShellHWDetection\")$,\"Software Protection\"$(\"sppsvc\")$,\"SolarWinds TFTP Server\"$(\"SolarWinds TFTP Server\")$,\"Sophos Agent\"$(\"Sophos Agent\")$,\"Sophos Anti-Virus status reporter\"$(\"SAVAdminService\")$,\"Sophos Anti-Virus\"$(\"SAVService\")$,\"Sophos AutoUpdate Service\"$(\"Sophos AutoUpdate Service\")$,\"Sophos Endpoint Defense Service\"$(\"Sophos Endpoint Defense Service\")$,\"Sophos Message Router\"$(\"Sophos Message Router\")$,\"Sophos System Protection Service\"$(\"Sophos System Protection Service\")$,\"Sophos Web Control Service\"$(\"Sophos Web Control Service\")$,\"Sophos Web Intelligence Service\"$(\"swi_service\")$,\"System Event Notifica"
-                    },
-                    {
-                        "macro": "{$_SERVICE2}",
-                        "value": "tion Service\"$(\"SENS\")$,\"TCP/IP NetBIOS Helper\"$(\"lmhosts\")$,\"Task Scheduler\"$(\"Schedule\")$,\"User Profile Service\"$(\"ProfSvc\")$,\"VMware Alias Manager and Ticket Service\"$(\"VGAuthService\")$,\"VMware Tools\"$(\"VMTools\")$,\"VMware USB Arbitration Service\"$(\"VMUSBArbService\")$,\"Windows Driver Foundation - User-mode Driver Framework\"$(\"wudfsvc\")$,\"Windows Event Log\"$(\"eventlog\")$,\"Windows Firewall\"$(\"MpsSvc\")$,\"Windows Font Cache Service\"$(\"FontCache\")$,\"Windows Management Instrumentation\"$(\"Winmgmt\")$,\"Windows Remote Management (WS-Management)\"$(\"WinRM\")$,\"Windows Update\"$(\"wuauserv\")$,\"Workstation\"$(\"LanmanWorkstation\")$,\"World Wide Web Publishing Service\"$(\"W3SVC\")$"
-                    }
-                ],
-                "inventory_mode": "DISABLED"
-            },
-            {
-                "host": "CESJMP03",
-                "name": "CESJMP03",
-                "monitored_by": "PROXY",
-                "proxy": {
-                    "name": "shinkencombo2"
-                },
-                "templates": [
-                    {
-                        "name": "Linux by NRPE agent - OB"
-                    },
-                    {
-                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
-                    }
-                ],
-                "groups": [
-                    {
-                        "name": "SendToEventFederator"
-                    },
-                    {
-                        "name": "Shinken"
-                    }
-                ],
-                "interfaces": [
-                    {
-                        "ip": "10.173.246.70",
-                        "interface_ref": "if1"
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "cmdb_id",
-                        "value": "DE0017YYFB"
-                    }
-                ],
-                "macros": [
-                    {
-                        "macro": "{$HOSTADDRESS}",
-                        "value": "10.173.246.70"
-                    },
-                    {
-                        "macro": "{$_FS_NAME}",
-                        "value": "/$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
-                    }
-                ],
-                "inventory_mode": "DISABLED"
-            },
-            {
-                "host": "CESJMP04",
-                "name": "CESJMP04",
-                "monitored_by": "PROXY",
-                "proxy": {
-                    "name": "shinkencombo3"
-                },
-                "templates": [
-                    {
-                        "name": "Linux by NRPE agent - OB"
-                    },
-                    {
-                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
-                    }
-                ],
-                "groups": [
-                    {
-                        "name": "SendToEventFederator"
-                    },
-                    {
-                        "name": "Shinken"
-                    }
-                ],
-                "interfaces": [
-                    {
-                        "ip": "10.173.246.71",
-                        "interface_ref": "if1"
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "cmdb_id",
-                        "value": "DE0017YZF8"
-                    }
-                ],
-                "macros": [
-                    {
-                        "macro": "{$HOSTADDRESS}",
-                        "value": "10.173.246.71"
-                    },
-                    {
-                        "macro": "{$_FS_NAME}",
-                        "value": "/$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
-                    }
-                ],
-                "inventory_mode": "DISABLED"
-            },
-            {
-                "host": "CESNMCEXTCUST01",
-                "name": "CESNMCEXTCUST01",
-                "monitored_by": "PROXY",
-                "proxy": {
-                    "name": "shinkencombo3"
-                },
-                "templates": [
-                    {
-                        "name": "Linux no swap by NRPE agent - OB"
-                    },
-                    {
-                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
-                    }
-                ],
-                "groups": [
-                    {
-                        "name": "SendToEventFederator"
-                    },
-                    {
-                        "name": "Shinken"
-                    }
-                ],
-                "interfaces": [
-                    {
-                        "ip": "10.173.248.141",
-                        "interface_ref": "if1"
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "cmdb_id",
-                        "value": "DF001F8U59"
-                    }
-                ],
-                "macros": [
-                    {
-                        "macro": "{$HOSTADDRESS}",
-                        "value": "10.173.248.141"
-                    },
-                    {
-                        "macro": "{$_FS_NAME}",
-                        "value": "/$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
-                    }
-                ],
-                "inventory_mode": "DISABLED"
-            },
-            {
-                "host": "CESNMCEXTCUST02",
-                "name": "CESNMCEXTCUST02",
-                "monitored_by": "PROXY",
-                "proxy": {
-                    "name": "shinkencombo2"
-                },
-                "templates": [
-                    {
-                        "name": "Linux no swap by NRPE agent - OB"
-                    },
-                    {
-                        "name": "Pre-Migration Agent Check by Zabbix agent - OB"
-                    }
-                ],
-                "groups": [
-                    {
-                        "name": "SendToEventFederator"
-                    },
-                    {
-                        "name": "Shinken"
-                    }
-                ],
-                "interfaces": [
-                    {
-                        "ip": "10.173.248.169",
-                        "interface_ref": "if1"
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "cmdb_id",
-                        "value": "DF001DND47"
-                    }
-                ],
-                "macros": [
-                    {
-                        "macro": "{$HOSTADDRESS}",
-                        "value": "10.173.248.169"
-                    },
-                    {
-                        "macro": "{$_FS_NAME}",
-                        "value": "/$(10%)$$(10%)$,/boot$(10%)$$(10%)$,/dev/shm$(10%)$$(10%)$,/home$(10%)$$(10%)$,/images$(10%)$$(10%)$,/opt$(10%)$$(10%)$,/system$(10%)$$(10%)$,/tmp$(10%)$$(10%)$,/usr$(10%)$$(10%)$,/var$(10%)$$(10%)$"
                     }
                 ],
                 "inventory_mode": "DISABLED"
@@ -1241,6 +904,74 @@
                     {
                         "macro": "{$_OMEM_USERNAME}",
                         "value": "DCO"
+                    }
+                ],
+                "inventory_mode": "DISABLED"
+            },
+            {
+                "host": "p011w01iprex019",
+                "name": "p011w01iprex019",
+                "monitored_by": "PROXY",
+                "proxy": {
+                    "name": "shinkencombo4"
+                },
+                "templates": [
+                    {
+                        "name": "VMware Datastores by Simple check - OB"
+                    },
+                    {
+                        "name": "VMware Hypervisor by Simple check - OB"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "SendToEventFederator"
+                    }
+                ],
+                "interfaces": [
+                    {
+                        "ip": "10.93.6.32",
+                        "interface_ref": "if1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "cmdb_id",
+                        "value": "DF003YP07E"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$DATASTORETHRESHOLD}",
+                        "value": "10"
+                    },
+                    {
+                        "macro": "{$VMWARE.DATASTORE.PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$VMWARE.DATASTORE.URLI}",
+                        "value": "https://10.93.6.32/sdk"
+                    },
+                    {
+                        "macro": "{$VMWARE.DATASTORE.USERNAME}",
+                        "value": "shinken"
+                    },
+                    {
+                        "macro": "{$VMWARE.HV.UUID}",
+                        "value": "8224b5e6-8f88-aa45-0001-000000000032"
+                    },
+                    {
+                        "macro": "{$VMWARE.PASSWORD}",
+                        "type": "SECRET_TEXT"
+                    },
+                    {
+                        "macro": "{$VMWARE.URL}",
+                        "value": "https://10.93.6.32/sdk"
+                    },
+                    {
+                        "macro": "{$VMWARE.USERNAME}",
+                        "value": "shinken"
                     }
                 ],
                 "inventory_mode": "DISABLED"

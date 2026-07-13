@@ -1,9 +1,19 @@
+import os
 import pandas as pd
 from pathlib import Path
 
-INPUT_DIR = Path(r"C:\Users\BXXT8019\Downloads")
-OUTPUT_FILE = INPUT_DIR / "assets.txt"
-FILES = [INPUT_DIR / f"asset-list-{i}.xls" for i in range(4, 15)]
+BASE_DIR = Path(__file__).resolve().parent
+INPUT_DIR = Path(os.getenv("ASSET_LIST_DIR", str(BASE_DIR)))
+OUTPUT_FILE = BASE_DIR / "assets.txt"
+FILES = []
+for i in range(4, 15):
+    for suffix in [".xls", ".xlsx"]:
+        candidate = INPUT_DIR / f"asset-list-{i}{suffix}"
+        if candidate.exists():
+            FILES.append(candidate)
+
+if not FILES:
+    FILES = [INPUT_DIR / f"asset-list-{i}.xls" for i in range(4, 15)]
 
 ASSET_NAME_CANDIDATES = ["Asset Name", "asset name", "AssetName", "assetName", "Name"]
 
