@@ -15,20 +15,15 @@ BASE_DIR = Path(__file__).resolve().parent
 
 def resolve_path(env_var, default_name):
     if env_var:
-        return env_var
+        p = Path(env_var)
+        # If relative path in env var, resolve it from script directory
+        return str((BASE_DIR / p).resolve()) if not p.is_absolute() else str(p)
 
     candidate = BASE_DIR / default_name
-    if candidate.exists():
-        return str(candidate)
-
-    legacy = Path(r"C:\Users\BXXT8019\OneDrive - orange.com\Bureau") / default_name
-    if legacy.exists():
-        return str(legacy)
-
     return str(candidate)
 
 
-# Files
+# Files (all default to script directory)
 INPUT_FILE = resolve_path(os.getenv("ASSETS_INPUT_FILE"), "assets.txt")
 OUTPUT_FILE = resolve_path(os.getenv("ASSET_TEMPLATES_OUTPUT"), "asset_templates.csv")
 ASSETS_CMDB_FILE = resolve_path(os.getenv("ASSETS_CMDB_FILE"), "MIP-Assets.csv")
@@ -68,6 +63,19 @@ def call(method, params, auth=None, req_id=1):
 
 def norm(x):
     return (x or "").strip().lower()
+
+
+def normalize_host_for_lookup(x):
+    """
+    Normalize name for CMDB lookup:
+    - trim
+    - lowercase
+    - remove leading 'csu-' if present
+    """
+    v = norm(x)
+    if v.startswith("csu-"):
+        v = v[4:]
+    return v
 
 
 def fetch_hosts(auth, extra_params, req_id):
@@ -139,12 +147,13 @@ def get_host(auth, asset):
 def load_assets_lookup(assets_file):
     lookup = {}
     try:
-        with open(assets_file, 'r', encoding='utf-8') as f:
+        with open(assets_file, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                asset_name = (row.get("assetName", "") or "").strip()
-                if asset_name:
-                    lookup[asset_name.lower()] = row
+                asset_name = row.get("assetName", "")
+                key = normalize_host_for_lookup(asset_name)
+                if key:
+                    lookup[key] = row
     except FileNotFoundError:
         print(f"[WARN] CMDB file not found: {assets_file}")
     return lookup
@@ -161,7 +170,8 @@ def enrich_rows_with_cmdb(rows, assets_lookup):
 
     for row in rows:
         # Match by input asset name first, fallback to matched host
-        key = (row.get("asset_name") or row.get("matched_host") or "").strip().lower()
+        key_source = row.get("asset_name") or row.get("matched_host") or ""
+        key = normalize_host_for_lookup(key_source)
         cmdb = assets_lookup.get(key, {})
 
         if cmdb:
@@ -242,6 +252,9 @@ def main():
 
     assets_lookup = load_assets_lookup(ASSETS_CMDB_FILE)
     rows = enrich_rows_with_cmdb(rows, assets_lookup)
+
+    # Ensure output directory exists
+    Path(OUTPUT_FILE).parent.mkdir(parents=True, exist_ok=True)
 
     # Write CSV
     with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:

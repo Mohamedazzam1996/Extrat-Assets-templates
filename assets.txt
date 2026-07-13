@@ -1,0 +1,13 @@
+07351ppldbora01
+07351prldbord01
+07553ppldbbdd01
+07553prldbbdd01
+07615ppldbbdd01
+07615prldbbdd01
+07821prldblst02
+07951PIHPRDB01
+07954PIHPRDB01
+B2GVDRPRADCUST1.b2gaas-cust.cloud.local
+B2GVDRPRADCUST2.b2gaas-cust.cloud.local
+B2GVDRPRADINFR1.b2gaas-infra.cloud.local
+B2GVDRPRADINFR2.b2gaas-infra.cloud.local
